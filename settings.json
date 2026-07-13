@@ -1,0 +1,34 @@
+{
+  "name": "Base REST API",
+  "version": "v1.0.0",
+  "description": "Base sederhana untuk bikin REST API sendiri.",
+  "apiSettings": {
+    "creator": "Ramz",
+    "apikey": ["Elaina"]
+  },
+  "categories": [
+    {
+      "name": "Downloader",
+      "items": [
+        {
+          "name": "Pinterest Downloader",
+          "desc": "Download gambar/video dari link Pinterest",
+          "path": "/downloader/pindl?url=",
+          "status": "ready",
+          "params": {
+            "url": "Link post Pinterest"
+          }
+        },
+        {
+          "name": "Instagram Downloader",
+          "desc": "Download foto/video/reels dari link Instagram",
+          "path": "/downloader/igall?url=",
+          "status": "ready",
+          "params": {
+            "url": "Link post/reel Instagram"
+          }
+        }
+      ]
+    }
+  ]
+}
