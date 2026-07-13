@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="pageTitle">Dokumentasi API</title>
+    <link rel="icon" href="/src/icon.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="/" class="brand">
+          <img src="/src/icon.png" alt="" class="brand-icon" />
+          <span class="brand-name" id="brandName">Base REST API</span>
+          <span class="brand-version" id="brandVersion">v1.0.0</span>
+        </a>
+        <nav class="topbar-links">
+          <span class="status-pill"
+            ><span class="status-dot"></span>Online</span
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="intro">
+        <h1 id="introTitle">Dokumentasi API</h1>
+        <p id="introDesc">
+          Daftar endpoint yang tersedia. Klik salah satu untuk coba langsung.
+        </p>
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari endpoint..."
+            autocomplete="off"
+          />
+        </div>
+      </section>
+
+      <section class="categories" id="categories">
+      </section>
+
+      <p class="no-results" id="noResults">Endpoint tidak ditemukan.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span id="footerText">&copy; 2026 Base REST API</span>
+        <a href="/">Beranda</a>
+      </div>
+    </footer>
+
+    <!-- Panel tes endpoint -->
+    <div class="overlay" id="overlay">
+      <div
+        class="panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="panelName"
+      >
+        <div class="panel-header">
+          <div>
+            <h3 id="panelName">Nama Endpoint</h3>
+            <p id="panelDesc">Deskripsi endpoint.</p>
+          </div>
+          <button class="panel-close" id="panelClose" aria-label="Tutup">
+            &times;
+          </button>
+        </div>
+
+        <div class="panel-body">
+          <div class="request-line">
+            <span class="badge badge-get" id="panelMethod">GET</span>
+            <code id="panelEndpoint">/path</code>
+            <button class="icon-btn" id="copyEndpoint" type="button">
+              Salin
+            </button>
+          </div>
+
+          <form class="panel-form" id="panelForm"></form>
+
+          <p class="panel-error" id="panelError"></p>
+
+          <div class="response-block" id="responseBlock" hidden>
+            <div class="response-head">
+              <span>Response</span>
+              <span class="badge" id="responseStatus"></span>
+              <button class="icon-btn" id="copyResponse" type="button">
+                Salin
+              </button>
+            </div>
+            <pre class="response-output" id="responseOutput"></pre>
+          </div>
+        </div>
+
+        <div class="panel-footer">
+          <button class="btn btn-primary" id="panelSend" type="button">
+            Kirim Request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

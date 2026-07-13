@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base REST API</title>
+    <link rel="icon" href="/src/icon.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="landing">
+      <div class="landing-card">
+        <img src="/src/icon.png" alt="" class="landing-icon" />
+        <h1 id="landingName">Base REST API</h1>
+        <p id="landingDesc">Base sederhana untuk bikin REST API sendiri.</p>
+
+        <div class="landing-meta">
+          <span class="badge badge-get" id="landingVersion">v1.0.0</span>
+          <span class="status-pill"
+            ><span class="status-dot"></span>Online</span
+          >
+        </div>
+
+        <div class="landing-actions">
+          <a href="/docs" class="btn btn-primary">Lihat Dokumentasi</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      fetch("/src/settings.json")
+        .then((res) => res.json())
+        .then((settings) => {
+          if (settings.name)
+            document.getElementById("landingName").textContent = settings.name;
+          if (settings.description)
+            document.getElementById("landingDesc").textContent =
+              settings.description;
+          if (settings.version)
+            document.getElementById("landingVersion").textContent =
+              settings.version;
+          if (settings.name) document.title = settings.name;
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>
